@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import store from "./store";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { CssBaseline } from "@mui/material";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
 import Config from "./pages/config";
@@ -23,12 +24,12 @@ const theme = createTheme({
 			main: "#fffc00",
 		},
 		background: {
-			default: "#0e0606",
-			paper: "#f9f8ff",
+			default: "#f9f8ff",
+			paper: "#0e0606",
 		},
 		text: {
-			primary: "#f9f8ff",
-			secondary: "#f9f8ff",
+			primary: "#0e0606",
+			secondary: "#4dd0e1",
 			// disabled: styles.ttt,
 			// hint: styles.tttt,
 		},
@@ -38,6 +39,7 @@ const theme = createTheme({
 const Main: React.FC = () => {
 	return (
 		<ThemeProvider theme={theme}>
+			<CssBaseline />
 			<Router>
 				<div>
 					<Navbar

@@ -18,14 +18,14 @@ const GridCentered: React.FC<{
 		<Container maxWidth="md">
 			<Box
 				sx={{
-					bgcolor: "#cfe8fc",
-          display: "flex",
-          flexWrap: 'wrap',
+					// bgcolor: "#cfe8fc",
+          // display: "flex",
+          // flexWrap: 'wrap',
           padding: 2,
 					height: "auto",
 					margin: 0,
-					position: "absolute",
-					top: "10vh",
+					// position: "absolute",
+					marginTop: "5vh",
 					// transform: "translate(-20%, -20%)",
 				}}
 			>

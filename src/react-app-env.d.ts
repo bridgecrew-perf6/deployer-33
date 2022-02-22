@@ -66,8 +66,8 @@ type Container = {
     }
   },
   ports: Port[];
-  livenessProbe: Probe;
-  readinessProbe: Probe;
+  livenessProbe?: Probe;
+  readinessProbe?: Probe;
   env?: Env[];
   envFrom?: ConfigMapRef[];
 }

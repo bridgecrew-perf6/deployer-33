@@ -1,4 +1,3 @@
-import TextField from "@mui/material/TextField";
 import {
 	Controller,
 	UseFormRegister,
@@ -6,35 +5,35 @@ import {
 	FieldValues,
 } from "react-hook-form";
 import React from "react";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 
-const FormInputText: React.FC<{
-	name?: string;
+const FormSelect: React.FC<{
 	control: Control<FieldValues, any>;
 	label: string;
 	register: UseFormRegister<any>;
-	endAdornment?: React.ReactNode;
-}> = ({ name, control, label, register, endAdornment }) => {
+	options: string[];
+}> = ({ control, label, register, options }) => {
 	return (
 		<Controller
 			control={control}
-			key={label}
-			defaultValue=""
+			defaultValue={options[0]}
 			{...register(label)}
 			rules={{ required: `${label} required` }}
 			render={({ field: { onChange, value } }) => (
-				<TextField
-					onChange={onChange}
+				<Select
+					labelId={label}
 					value={value}
-					id={label}
-					color="primary"
 					label={label}
-					InputProps={{
-						endAdornment: endAdornment,
-					}}
-				/>
+					onChange={onChange}
+				>
+					{options.map((option) => (
+						<MenuItem value={option}>{option}</MenuItem>
+					))}
+				</Select>
 			)}
 		/>
 	);
 };
 
-export default FormInputText;
+export default FormSelect;
